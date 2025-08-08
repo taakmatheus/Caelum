@@ -20,10 +20,16 @@ ContaPoupanca contaJohn = new ContaPoupanca(John);
 contas.add(contaJohn);
 
 try{
-    contaJohn.sacar(1000);
     contaJohn.extrato();
 }
 catch(Exception e) {
     System.debug(e.getMessage());
 }
 
+
+Set<String> devedores = new Set<String>();
+devedores.Add('victor');
+devedores.Add('maria');
+
+Boolean devedor = devedores.Contains(contaJohn.titular.getNome());
+System.debug(devedor.ToString());

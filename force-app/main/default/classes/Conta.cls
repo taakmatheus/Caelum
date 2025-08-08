@@ -25,7 +25,7 @@ public abstract class Conta{
     }
 
     //deposito de valor
-    public void depositar(double valor) {
+    public virtual void depositar(double valor) {
         this.saldo += valor;
     }
 
