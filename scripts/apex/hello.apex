@@ -5,10 +5,12 @@
 // You can also execute the entire file by running the command:
 //     SFDX: Execute Anonymous Apex with Editor Contents
 
-ContaCorrente c1 = new ContaCorrente('Alberto');
-ContaCorrente c2 = new ContaCorrente('Bruna');
-ContaCorrente c3 = new ContaCorrente('Carlos');
-System.debug(c1.numero);
-System.debug(c2.numero);
-System.debug(c3.numero);
-System.debug(Conta.proximoNumero());
+ContaPoupanca c = new ContaPoupanca('1', 'Adriano');
+c.deposita(100.00d);
+System.debug(c.toString());
+try {
+    c.deposita(10.00d);
+    System.debug(c.saldo);
+} catch (IllegalArgumentException e) {
+    System.debug(e.getMessage());
+}
