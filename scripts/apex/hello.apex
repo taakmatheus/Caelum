@@ -19,8 +19,11 @@ Cliente john = new Cliente('john', 'cpfjohn', 'rgTeste', 'ruaTeste');
 ContaPoupanca contaJohn = new ContaPoupanca(John);
 contas.add(contaJohn);
 
-contaDiogo.transferir(10000, contaTeste);
-contaTeste.extrato();
-
-System.debug(Conta.getNumeroDeContas());
+try{
+    contaJohn.sacar(1000);
+    contaJohn.extrato();
+}
+catch(Exception e) {
+    System.debug(e.getMessage());
+}
 

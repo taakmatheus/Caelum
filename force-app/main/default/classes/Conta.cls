@@ -1,4 +1,4 @@
-public abstract class Conta {
+public abstract class Conta{
     //atributos da classe
     public integer numero{get; set;}
     public Cliente titular {get; set;}
@@ -41,7 +41,7 @@ public abstract class Conta {
             destino.depositar(valor);
             System.debug('Transferencia realizada com sucesso!');
         } else {
-            System.debug('Saldo insuficiente!');
+            throw new BaseException('Saldo insuficiente para a acao');
         }
     }
 
