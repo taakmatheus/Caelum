@@ -1,8 +1,8 @@
 public class ContaPoupanca extends Conta implements ITributavel  {
     public double saldo {get; private set;}
     
-    public ContaPoupanca(Integer numero, Cliente titular) {
-        super(numero, titular);
+    public ContaPoupanca( Cliente titular) {
+        super(titular);
     }
     //substituindo o saque colocando a taxa de 10 centavos
     public override boolean sacar(double valorSaque) {
@@ -14,7 +14,7 @@ public class ContaPoupanca extends Conta implements ITributavel  {
         }
     }
     
-    public double calcularTributo() {
+    public double calculaTributo() {
         return this.saldo * 0.03;
     }
 }

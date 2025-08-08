@@ -3,15 +3,15 @@ public abstract class Conta {
     public integer numero{get; set;}
     public Cliente titular {get; set;}
     public double saldo {get; private set;}
+    private static integer numeroDecontas = 0;
 
     //Construtores da classe
-    public Conta(integer numero, Cliente titular){
-        this.numero = numero;
+    public Conta( Cliente titular){
+        Conta.numeroDecontas++;
+        this.numero = Conta.numeroDecontas;
         this.titular = titular;
         this.saldo = 100;
     }
-
-    public Conta(){}
 
     //metodos
     //saque de dinheiro
@@ -43,5 +43,9 @@ public abstract class Conta {
         } else {
             System.debug('Saldo insuficiente!');
         }
+    }
+
+    public static integer getNumeroDeContas() {
+        return Conta.numeroDecontas;
     }
 }

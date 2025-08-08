@@ -1,8 +1,8 @@
 public class ContaCorrente extends Conta{
     public double saldo {get; private set;}
 
-    public ContaCorrente(Integer numero, Cliente titular){
-        super(numero, titular);
+    public ContaCorrente(Cliente titular){
+        super(titular);
     }
     
     public override boolean sacar(double valorSaque) {
