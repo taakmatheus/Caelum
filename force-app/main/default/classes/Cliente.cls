@@ -1,8 +1,8 @@
 public class Cliente {
-    private string nome;
-    private string cpf;
-    private string rg;
-    private string endereco;
+    public string nome {get; private set;}
+    public string cpf {get; private set;}
+    public string rg {get; private set;}
+    public string endereco {get; private set;}
     
 
     //construtores
@@ -15,37 +15,5 @@ public class Cliente {
 
     public Cliente() {}
 
-    //gets e sets-----------------
-    public void setNome(string nome) {
-        this.nome =nome;
-    }
 
-    public string getNome() {
-        return this.nome;
-    }
-    
-    public void setCpf(string cpf) {
-        this.cpf = cpf;
-    }
-
-    public string getCpf() {
-        return this.cpf;
-    }
-
-    public void setRg(string rg) {
-        this.rg = rg;
-    }
-
-    public string getRg() {
-        return this.rg;
-    }
-
-    public void setEndereco(string endereco) {
-        this.endereco = endereco;
-    }
-
-    public string getEndereco() {
-        return this.endereco;
-    }
-    //fim gets e sets-----------------
 }

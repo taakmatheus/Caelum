@@ -12,7 +12,6 @@ public class ContaPoupanca extends Conta implements ITributavel  {
                 return true;
             } else {  
                 throw new BaseException('Nao foi possivel concluir o saque, valor na conta insuficiente');   
-                return false; 
             }
         }
 

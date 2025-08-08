@@ -26,10 +26,15 @@ catch(Exception e) {
     System.debug(e.getMessage());
 }
 
-
+//set nao tem ordem, para ordenar usar a List
+//nao aceita duplicados
 Set<String> devedores = new Set<String>();
 devedores.Add('victor');
 devedores.Add('maria');
+devedores.add('victor');
+system.debug(devedores.size());
 
-Boolean devedor = devedores.Contains(contaJohn.titular.getNome());
+
+Boolean devedor = devedores.Contains(contaJohn.titular.nome());
 System.debug(devedor.ToString());
+
