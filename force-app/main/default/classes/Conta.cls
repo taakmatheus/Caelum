@@ -1,25 +1,18 @@
-public abstract with sharing class Conta {
-    public Integer numero;
-    public String titular;
-    public Double saldo;
-    private static Integer numeroDeContas = 0;
-
-    public Conta(String textoNumero, String textoTitular) {
-        this.numero = Integer.valueOf(textoNumero);
-        this.titular = textoTitular;
-        this.saldo = 0.0;
+public virtual with sharing class Conta {
+    public String Nconta = '';
+    public Decimal saldo= 0;
+    public Conta(){}
+    public Conta(String Nconta,Decimal saldo) {
+        this.Nconta = Nconta;
+        this.saldo = saldo;
+    }
+    public virtual Decimal Saque (Decimal valor){
+        this.saldo -= valor;
+        return this.saldo;
+    }
+    public virtual Decimal Deposito(Decimal valor){
+        this.saldo += valor;
+        return this.saldo;
     }
 
-    public Conta(String textoTitular) {
-        Conta.numeroDeContas++;
-        this.numero = Conta.numeroDeContas;
-        this.titular = textoTitular;
-    }
-
-    public static Integer proximoNumero() {
-        return Conta.numeroDeContas + 1;
-    }
-
-    public abstract void saca(Double valor);
-    public abstract void deposita(Double valor);
 }
