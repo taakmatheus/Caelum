@@ -5,10 +5,25 @@
 // You can also execute the entire file by running the command:
 //     SFDX: Execute Anonymous Apex with Editor Contents
 
-ContaCorrente c1 = new ContaCorrente('Alberto');
-ContaCorrente c2 = new ContaCorrente('Bruna');
-ContaCorrente c3 = new ContaCorrente('Carlos');
-System.debug(c1.numero);
-System.debug(c2.numero);
-System.debug(c3.numero);
-System.debug(Conta.proximoNumero());
+
+List<Conta> contas = new List<Conta>();
+Cliente diogo = new Cliente('diogo', 'cpfexemplo', 'rg ememplo', 'rua 123');
+ContaCorrente contaDiogo = new ContaCorrente(1, diogo);
+contas.add(contaDiogo);
+
+Cliente teste = new Cliente('teste', 'cpfTeste', 'rgTeste', 'ruaTeste');
+ContaCorrente contaTeste = new ContaCorrente(2, teste);
+contas.add(contaTeste);
+
+Cliente john = new Cliente('john', 'cpfjohn', 'rgTeste', 'ruaTeste');
+ContaPoupanca contaJohn = new ContaPoupanca(3, John);
+contas.add(contaJohn);
+
+contaDiogo.transferir(10000, contaTeste);
+contaTeste.extrato();
+
+
+
+
+
+
