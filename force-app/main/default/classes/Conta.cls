@@ -14,6 +14,7 @@ public abstract with sharing class Conta {
         Conta.numeroDeContas++;
         this.numero = Conta.numeroDeContas;
         this.titular = textoTitular;
+        this.saldo = 0.0;
     }
 
     public static Integer proximoNumero() {
@@ -22,4 +23,8 @@ public abstract with sharing class Conta {
 
     public abstract void saca(Double valor);
     public abstract void deposita(Double valor);
+
+    public override String toString() {
+        return 'titular: ' + this.titular;
+    }
 }

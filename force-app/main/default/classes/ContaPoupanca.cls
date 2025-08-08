@@ -14,6 +14,9 @@ public with sharing class ContaPoupanca extends Conta {
     }
 
     public override void deposita(double valor) {
+        if (valor < 0.0) {
+            throw new IllegalArgumentException('Valor de deposito deve ser positivo');
+        }
         this.saldo += valor; // Conta poupanca não tem taxa
     }
 }
