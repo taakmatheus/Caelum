@@ -11,7 +11,7 @@ public with sharing class ContaPoupanca extends Conta implements IcalculaRendime
             return this.saldo;
         }
         catch(Exception e){
-            throw new Exception('Valor do saque maior que o saldo');
+            throw e;
         }
         
         
