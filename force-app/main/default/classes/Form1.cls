@@ -39,4 +39,24 @@ public with sharing class Form1 {
             System.debug('Conta não encontrada para o titular: ' + nomeTitular);
         }
     }
+
+    public void buscaEmTexto(String texto, String busca) {
+        Integer posicao = texto.indexOf(busca);
+        if (posicao >= 0) {
+            System.debug('achei o texto ' + busca);
+        } else {
+            System.debug('não achei');
+        }
+    }
+
+    public void buscaESubstitui(String texto, String busca, String substituto) {
+        String resultado = texto.replace(busca, substituto);
+        System.debug('Texto original: ' + texto);
+        texto = resultado;
+        System.debug('Texto modificado: ' + texto);
+    }
+
+    public void capitaliza(String texto) {
+        System.debug(texto.toUpperCase());
+    }
 }
