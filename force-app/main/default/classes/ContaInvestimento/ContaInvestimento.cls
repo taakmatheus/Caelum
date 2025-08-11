@@ -1,8 +1,14 @@
-public with sharing class ContaCorrente extends Conta implements ITributavel {
+public with sharing class ContaInvestimento extends Conta implements ITributavel {
+    public ContaInvestimento() {
 
+    }
 
-    public ContaCorrente(Integer numero, string titular, double saldo) {
+    public ContaInvestimento(Integer numero, string titular, double saldo) {
         super(numero, titular, saldo);
+    }
+
+    public Double CalcularTributo(){
+        return this.saldo * 0.03;
     }
 
     public override bool Saca(Double valor){
@@ -16,19 +22,13 @@ public with sharing class ContaCorrente extends Conta implements ITributavel {
             throw new SaldoInsuficienteException();
             return false;
         }    
-    } 
+    }
 
     public override void Deposita(Double valor){
         if(valor < 0){
             throw new ArgumentException('Valor de depósito não pode ser negativo.');
         }
-        saldo += valor - 0.1;
+        this.saldo += valor;
     }
-
-    public double CalcularTributo(){
-        return this.saldo * 0.05;
-    }
-
-
 
 }
