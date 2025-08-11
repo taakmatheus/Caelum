@@ -1,18 +1,16 @@
 public with sharing class Form1 {
-    private Integer numeroDeContas;
-    private Conta[] contas;
+    private List<Conta> contas;
 
     public Form1() {
-        this.numeroDeContas = 0;
+        this.contas = new List<Conta>();
     }
 
     public void adicionaConta(Conta conta) {
-        this.contas[this.numeroDeContas] = conta;
-        this.numeroDeContas++;
+        this.contas.add(conta);
     }
 
     public void Form1_Load() {
-        this.contas = new Conta[10];
+        this.contas = new List<Conta>();
 
         ContaCorrente c1 = new ContaCorrente('1', 'victor');
         this.adicionaConta(c1);
@@ -25,8 +23,7 @@ public with sharing class Form1 {
     }
 
     public void printContas() {
-        for (Integer i = 0; i < this.numeroDeContas; i++) {
-            Conta conta = this.contas[i];
+        for (Conta conta : this.contas) {
             System.debug('Conta: ' + conta.numero + ', Titular: ' + conta.titular + ', Saldo: ' + conta.saldo);
         }
     }

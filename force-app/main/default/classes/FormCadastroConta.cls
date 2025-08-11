@@ -16,7 +16,7 @@ public with sharing class FormCadastroConta {
     }
 
     public void botaoCadastro() {
-        ContaCorrente ct = new ContaCorrente(this.textoTitular);
+        ContaCorrente ct = new ContaCorrente(this.textoNumero, this.textoTitular);
         this.formPrincipal.adicionaConta(ct);
     }
 }

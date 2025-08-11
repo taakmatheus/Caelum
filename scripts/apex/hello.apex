@@ -5,4 +5,6 @@
 // You can also execute the entire file by running the command:
 //     SFDX: Execute Anonymous Apex with Editor Contents
 
-// teste
+Form1 f = new Form1();
+f.Form1_Load();
+f.printContas();
