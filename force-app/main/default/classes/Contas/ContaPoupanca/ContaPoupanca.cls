@@ -7,7 +7,7 @@ public with sharing class ContaPoupanca extends Conta implements ITributavel{
         super(numero, titular, saldo);
     }
 
-    public override void Saca(Double valor){
+    public override Boolean Saca(Double valor){
         if (valor + 0.10 <= this.Saldo)
         {
             this.Saldo -= valor + 0.10;

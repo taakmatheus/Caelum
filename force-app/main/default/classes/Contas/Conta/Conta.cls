@@ -9,6 +9,19 @@ public abstract with sharing class Conta {
 
     private static integer numeroDeContas = 0;
 
+    public override Boolean equals(Object object){
+        if(!(object instanceof Conta)){
+            return false;
+        }
+        Conta outraConta = (Conta) object;
+        return this.numero == outraConta.numero;
+    }
+
+    public override String toString(){
+        return ('titular:' + titular.nome );
+
+    }
+
     public Conta(Integer numero, string titular, double saldo) {
         this.numero = numero;
         this.titular = titular;
@@ -21,7 +34,7 @@ public abstract with sharing class Conta {
     }
 
 
-    public abstract bool Saca(double valor);
+    public abstract Boolean Saca(double valor);
 
     public abstract void Deposita(Double valor);
 

@@ -11,7 +11,7 @@ public with sharing class ContaInvestimento extends Conta implements ITributavel
         return this.saldo * 0.03;
     }
 
-    public override bool Saca(Double valor){
+    public override Boolean Saca(Double valor){
         if (valor + 0.10 <= this.Saldo)
         {
             this.Saldo -= valor + 0.10;
