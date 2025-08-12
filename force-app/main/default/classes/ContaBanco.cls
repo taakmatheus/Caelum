@@ -8,8 +8,13 @@ public abstract class ContaBanco {
     
    List<string> devedores = new List<string>();
     
-   
-    
+   public ContaBanco(){
+    devedores.add('mauricio');
+    devedores.add('Maria');
+    devedores.add('Elena');
+    devedores.add('victor');
+    devedores.add('Ettore');
+   }
     public virtual void saca(double valor){
         
     }
@@ -22,4 +27,10 @@ public abstract class ContaBanco {
     public void AdicionarConta(Conta conta){
         contas.add(conta);
     }
+
+    public void deposito (double valor){
+        this.saldo += valor;
+    }
+    
+    
 }
