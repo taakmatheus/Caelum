@@ -1,9 +1,8 @@
-public with sharing class ContaInvestimento  extends Conta{
+public with sharing class ContaInvestimento  extends Conta implements Tributavel{
     public ContaInvestimento() {
     }
     public ContaInvestimento(Cliente titular) {
         this.titular = titular;
-        this.saldo = 0.0;
     }
 
     public override void saca(Double valor){
@@ -16,8 +15,5 @@ public with sharing class ContaInvestimento  extends Conta{
 
     public double calculaTributo() {
         return this.saldo * 0.03;
-    }
-    public static Integer proximaConta(){
-        return Conta.numeroDeContas + 1;
     }
 }

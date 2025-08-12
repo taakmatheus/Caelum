@@ -32,3 +32,13 @@ ContaPoupanca conta2 = new ContaPoupanca(cliente2);
 
 System.debug(conta2.numero);
 
+try{
+    //conta2.deposita(-1.0d);
+    conta2.saca(500.00d);
+}
+catch(System.IllegalArgumentException e){
+    System.debug(e.getMessage());
+}
+catch(SaldoInsuficienteException e){
+    System.debug(e.getMessage());
+}
