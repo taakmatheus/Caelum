@@ -5,12 +5,30 @@
 // You can also execute the entire file by running the command:
 //     SFDX: Execute Anonymous Apex with Editor Contents
 
+
 Cliente cliente = new Cliente('Fernando');
-ContaCorrente conta = new ContaCorrente(cliente, 1);
+
+ContaCorrente conta = new ContaCorrente(cliente);
+
 conta.deposita(200.00d);
+
 System.debug(conta.saldo);
+
 conta.saca(50.00d);
+
 TotalizadorDeTributos total = new TotalizadorDeTributos();
+
 total.acumula(conta);
+
 System.debug(total.Total);
+
+Integer proximaConta = ContaCorrente.proximaConta();
+
+System.debug(proximaConta);
+
+Cliente cliente2 = new Cliente('Jessica');
+
+ContaPoupanca conta2 = new ContaPoupanca(cliente2);
+
+System.debug(conta2.numero);
 
