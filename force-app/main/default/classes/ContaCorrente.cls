@@ -1,25 +1,35 @@
-public with sharing class ContaCorrente extends Conta implements Tributavel {
-    public ContaCorrente(String textoNumero, String textoTitular) {
-        super(textoNumero, textoTitular);
+public class ContaCorrente extends ContaBanco {
+  private static integer totalDeContas = 0;
+    
+  
+public override void sacar(double valor){
+        this.saldo -= (valor + 0.10);
     }
-
-    public ContaCorrente(String textoTitular) {
-        super(textoTitular);
+    
+    public void botaoCadastro_Click(String titular, Integer numero, Integer saldo){
+        ContaCorrente novaConta = new ContaCorrente();
+        novaConta.titular = titular;
+        novaConta.numero = numero;
+        novaConta.saldo = saldo;
+        Account acct = new Account();
+        acct.name = titular;
+        acct.AccountNumber = String.valueOf(numero);
+        acct.SaldoConta__c = saldo;
+		insert acct;
+        
     }
-
-    public override void saca(Double valor) {
-        if (this.saldo >= valor) {
-            this.saldo -= (valor + 0.05); // Conta corrente tem taxa de 0.05
-        }
+    
+    public double CalcularTributo(double saldo){
+        return this.saldo * 0.05;
     }
-
-    public override void deposita(Double valor) {
-        this.saldo += valor - 0.10; // Conta corrente tem taxa de 0.10
+    public contaCorrente(){
+        ContaCorrente.totaldeContas++;
     }
-
-    public double calcularTributos() {
-        double imposto = this.saldo * 0.05d;
-        this.saldo -= imposto;
-        return imposto;
+    
+    public static integer ProximaConta(){
+        return ContaCorrente.totalDeContas + 1;
     }
+    
+   
+     
 }
