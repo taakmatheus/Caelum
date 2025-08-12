@@ -1,13 +1,9 @@
 public with sharing class ContaInvestimento  extends Conta{
     public ContaInvestimento() {
-        Conta.numeroDeContas++;
-        this.numero = Conta.numeroDeContas;
     }
     public ContaInvestimento(Cliente titular) {
         this.titular = titular;
         this.saldo = 0.0;
-        Conta.numeroDeContas++;
-        this.numero = Conta.numeroDeContas;
     }
 
     public override void saca(Double valor){
