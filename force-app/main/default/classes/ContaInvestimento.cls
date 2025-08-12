@@ -1,11 +1,13 @@
 public with sharing class ContaInvestimento  extends Conta{
     public ContaInvestimento() {
-
+        Conta.numeroDeContas++;
+        this.numero = Conta.numeroDeContas;
     }
-    public ContaInvestimento(Cliente titular, Integer numero) {
+    public ContaInvestimento(Cliente titular) {
         this.titular = titular;
-        this.numero = numero;
         this.saldo = 0.0;
+        Conta.numeroDeContas++;
+        this.numero = Conta.numeroDeContas;
     }
 
     public override void saca(Double valor){
@@ -18,5 +20,8 @@ public with sharing class ContaInvestimento  extends Conta{
 
     public double calculaTributo() {
         return this.saldo * 0.03;
+    }
+    public static Integer proximaConta(){
+        return Conta.numeroDeContas + 1;
     }
 }
