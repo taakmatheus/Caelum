@@ -4,7 +4,6 @@ public with sharing class ContaCorrente extends Conta implements Tributavel{
     }
     public ContaCorrente(Cliente titular){
         this.titular = titular;
-        this.saldo = 0.0;
     }
     public override void saca(Double valor){
         if(valor<0.0){

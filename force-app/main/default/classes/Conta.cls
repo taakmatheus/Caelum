@@ -1,7 +1,7 @@
 public abstract with sharing class Conta {
     public Cliente titular;
     public Integer numero;
-    public Double saldo;
+    public Double saldo = 0.0;
     public static Integer numeroDeContas = 0;
 
     public Conta(){
@@ -11,7 +11,6 @@ public abstract with sharing class Conta {
 
     public Conta(Cliente titular) {
         this.titular = titular;
-        this.saldo = 0.0;
         numeroDeContas++;
         this.numero = numeroDeContas;
     }
@@ -22,6 +21,10 @@ public abstract with sharing class Conta {
 
      public static Integer proximaConta(){
         return numeroDeContas + 1;
+    }
+
+    public override String ToString(){
+        return 'titular: ' + this.titular.nome;
     }
 
 }

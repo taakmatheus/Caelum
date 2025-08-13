@@ -31,6 +31,8 @@ Cliente cliente2 = new Cliente('Jessica');
 ContaPoupanca conta2 = new ContaPoupanca(cliente2);
 
 System.debug(conta2.numero);
+System.debug(conta);
+
 
 try{
     //conta2.deposita(-1.0d);
