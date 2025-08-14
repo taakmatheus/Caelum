@@ -1,12 +1,8 @@
-public with sharing class Cliente {
-    
-    public String titular;
+public class Cliente {
+    public String titular{get; private set;}
 
-    public Cliente(String titular){
-
+    public Cliente (String titular) {
         this.titular = titular;
     }
-    
 
-    
 }
