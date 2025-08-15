@@ -1,4 +1,4 @@
-public with sharing class TotalizadorDeTributos {
+public class TotalizadorDeTributos {
     public double total {get; private set;}
 
     public void adiciona(ITributavel t) {
