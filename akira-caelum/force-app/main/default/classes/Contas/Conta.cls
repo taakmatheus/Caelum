@@ -24,4 +24,8 @@ public abstract class Conta{
     public static Integer ProximoNumero() {
         return Conta.numeroDeContas + 1;
     }
+
+    public override String ToString() {
+        return 'Titular: ' + this.titular.nome;
+    }
 }
