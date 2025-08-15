@@ -5,7 +5,7 @@
       "default": true
     }
   ],
-  "name": "Caelum",
+  "name": "akira-caelum",
   "namespace": "",
   "sfdcLoginUrl": "https://login.salesforce.com",
   "sourceApiVersion": "64.0"
