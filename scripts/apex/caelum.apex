@@ -1,0 +1,20 @@
+ContaCorrente cc = new ContaCorrente(123, new Cliente('João', '123.456.789-00', 'MG-12.345.678', 'Rua A, 123'));
+ContaPoupanca cp = new ContaPoupanca(456, new Cliente('Maria', '987.654.321-00', 'SP-12.345.678', 'Rua B, 456'));
+SeguroDeVida sv = new SeguroDeVida();
+cc.deposita(200);
+cc.saca(100);
+cp.deposita(200);
+cp.saca(100);
+
+System.debug('Imposto da conta corrente = ' + (cc.calculaTributo().setScale(2)));
+ITributavel t = cc;
+System.debug('Imposto da conta pela interface = ' + t.calculaTributo().setScale(2));
+System.debug('Imposto do seguro = ' + sv.calculaTributo().setScale(2));
+t = sv;
+System.debug('Imposto do seguro pela interface = ' + t.calculaTributo().setScale(2));
+System.debug('Imposto da conta poupança = ' + (cp.calculaTributo().setScale(2)));
+TotalizadorDeTributos totalizador = new TotalizadorDeTributos();
+totalizador.adiciona(cc);
+System.debug('Total: ' + totalizador.total.setScale(2));
+totalizador.adiciona(sv);
+System.debug('Total: ' + totalizador.total.setScale(2));
