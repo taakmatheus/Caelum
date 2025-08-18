@@ -129,3 +129,33 @@ System.debug(busca);
 for(String chave : dicionarios.keySet()){
     System.debug('Chave: ' + chave + ', Valor: ' + dicionarios.get(chave));
 }
+
+String nome = 'Guilherme';
+Integer idade = 42;
+List<Object> listaObjetos = new List<Object>{nome, idade};
+String mensagem = 'Olá {0}, a sua idade é {1}';
+String mensagemFormatada = String.format(mensagem, listaObjetos); // public static String format(String stringToFormat, List<Object> formattingArguments)
+System.debug(mensagemFormatada);
+
+String texto = 'Guilherme,42,São Paulo,Brasil';
+String[] partes = texto.split(',');
+for(String parte : partes){
+    System.debug(parte);
+}
+
+String curso = 'fn13';
+String maiusculo = curso.toUpperCase();
+System.debug(maiusculo);
+
+curso = curso.replace('fn', 'fn-');
+System.debug(curso);
+
+String nomeCompleto = 'Vicente Luz';
+String subNome = nomeCompleto.substring(0, 7);
+System.debug(subNome);
+
+Integer posicaoDoEspaco = nomeCompleto.indexOf(' ');
+System.debug(posicaoDoEspaco);
+
+Integer inicioDoSegundoNome = nomeCompleto.indexOf('L');
+System.debug(nomeCompleto.substring(inicioDoSegundoNome));
