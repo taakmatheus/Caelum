@@ -159,3 +159,9 @@ System.debug(posicaoDoEspaco);
 
 Integer inicioDoSegundoNome = nomeCompleto.indexOf('L');
 System.debug(nomeCompleto.substring(inicioDoSegundoNome));
+
+String bancos = StringUtil.pluralize('banco');
+String contas = StringUtil.pluralize('conta');
+
+System.debug(bancos);
+System.debug(contas);
