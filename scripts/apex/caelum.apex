@@ -79,12 +79,53 @@ for (Conta c : lista) {
     System.debug(c);
 }
 
-Integer qtdDeElementos = lista.size();
-
-System.debug('Quantidade de elementos na lista: ' + qtdDeElementos);
+Integer qtdDeElementosList = lista.size();
+System.debug('Quantidade de elementos na lista: ' + qtdDeElementosList);
 
 Boolean temC1 = lista.Contains(cc);
 Boolean temC2 = lista.Contains(cc2);
 
 System.debug('Contém cc: ' + temC1);
 System.debug('Contém cc2: ' + temC2);
+
+Set<String> devedores = new Set<String>();
+
+devedores.add('João');
+devedores.add('José');
+devedores.add('Pedro');
+devedores.add('Maria');
+
+Integer qtdDeElementosSet = devedores.size();
+System.debug('Quantidade de elementos no set: ' + qtdDeElementosSet);
+
+devedores.add('João');
+System.debug('Quantidade de elementos no set: ' + qtdDeElementosSet);
+
+Boolean contem = devedores.contains('Pedro');
+System.debug('Contém Pedro: ' + contem);
+
+for(String d : devedores){
+    System.debug(d);
+}
+
+// Set<String> devedores1 = GeradorDeDevedores.geraDevedores();
+
+// for (String d : devedores1) {
+//     System.debug(d);
+// }
+
+
+Map<String, Conta> dicionarios = new Map<String, Conta>();
+
+dicionarios.put(cc.getTitular().getNome(), cc);
+dicionarios.put(cc2.getTitular().getNome(), cc2);
+dicionarios.put(cc3.getTitular().getNome(), cc3);
+dicionarios.put(cp.getTitular().getNome(), cp);
+
+Conta busca = dicionarios.get('Pedro');
+
+System.debug(busca);
+
+for(String chave : dicionarios.keySet()){
+    System.debug('Chave: ' + chave + ', Valor: ' + dicionarios.get(chave));
+}
