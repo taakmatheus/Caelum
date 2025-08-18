@@ -34,4 +34,17 @@ public abstract with sharing class Conta {
     public static Integer proximoNumero() {
         return Conta.numeroDeContas + 1;
     }
+
+    public Boolean equals(Object obj){
+        if (!(obj instanceof Conta)) {
+            return false;
+        }
+        Conta outraConta = (Conta)obj;
+        return this.numero == outraConta.numero;
+        // return this.numero == ((Conta)obj).numero;
+    }
+
+    public override String toString() {
+        return 'titular: ' + this.titular.getNome();
+    }
 }
